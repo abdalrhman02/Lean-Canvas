@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lean Canvas Generator</title>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/all.min.css">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    </head>
+
+
+    <body>
+
+        <div id="play">
+            <div class="icon">
+                <i class="fa-solid fa-bell center"></i>
+            </div>
+
+            <div class="text">
+                <h4>Lets play a little game?</h4>
+                <p>If you say YES I lose and if you say NO you need to give me 5$</p>
+
+                <button id="notiBtn">ok?</button>
+            </div>
+        </div>
+
+        <div id="theGame" class="center">
+            <div id="question">
+                <div class="emoji">
+                    <p>&#128572</p>
+                </div>
+    
+                <h2>My website is the best?</h2>
+    
+                <div class="answer">
+                    <button id="yesAnswer">Yes</button>
+                    <button id="noAnswer">No</button>
+                </div>
+            </div>
+
+            <div id="yes">
+                <i class="fa-solid fa-xmark"></i>
+                <h2>Thank you my friend I know that :></h2>
+            </div>
+
+            <div id="no">
+                <i class="fa-solid fa-xmark"></i>
+                <h2>OK OK, give me my dollars!</h2>
+            </div>
+        </div>
+
+
+        <main>
+            <h1>Lean Canvas Generator</h1>
+            <form id="canvas-form">
+                <label for="prompt">Enter your business prompt:</label>
+                <input type="text" id="prompt" name="prompt" required>
+                <button type="submit" id="generateBtn">Generate Canvas</button>
+            </form>
+    
+            <div id="canvas-result">
+                <div class="canvas-category" id="problem">
+                    <div class="title">
+                        <img src="icons/problem.png" alt="Icon">
+                        <h2>Problem</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>Top 3 problems.</p>
+
+                        <div class="card">
+                            <h3>Problems List</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="solution">
+                    <div class="title">
+                        <img src="icons/solution.png" alt="Icon">
+                        <h2>Solution</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>These solutions almost will fix every problem we have</p>
+
+                        <div class="card">
+                            <h3>Solutions List</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="key-metrics">
+                    <div class="title">
+                        <img src="icons/metrics.png" alt="Icon">
+                        <h2>key metrics</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="card">
+                            <h3>Something here</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="unique-value-proposition">
+                    <div class="title">
+                        <img src="icons/gift.png" alt="Icon">
+                        <h2>Unique Value Proposition</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="card">
+                            <h3>Values List</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="channels">
+                    <div class="title">
+                        <img src="icons/channels.png" alt="Icon">
+                        <h2>Channels</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>Our channels</p>
+
+                        <div class="card">
+                            <h3>Channels List</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="unfair-advantage">
+                    <div class="title">
+                        <img src="icons/problem.png" alt="Icon">
+                        <h2>Unfair advantage</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>text here</p>
+
+                        <div class="card">
+                            <h3>Something here</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="customer-segments">
+                    <div class="title">
+                        <img src="icons/customer.png" alt="Icon">
+                        <h2>Customer segments</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>target customers</p>
+
+                        <div class="card">
+                            <h3>anything here</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-category" id="cost-structure">
+                    <div class="title">
+                        <img src="icons/price.png" alt="Icon">
+                        <h2>cost structure</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>text here</p>
+
+                        <div class="card">
+                            <h3>Something here</h3>
+                        </div>
+                        <div class="card">
+                            <h3>Something here</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="canvas-category" id="revenue-streams">
+                    <div class="title">
+                        <img src="icons/dollar.png" alt="Icon">
+                        <h2>revenue streams</h2>
+                    </div>
+                    
+                    <div class="content">
+                        <p>text here</p>
+
+                        <div class="card">
+                            <h3>Something here</h3>
+                        </div>
+                        <div class="card">
+                            <h3>Something here</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading">
+                <div class="l1 line"></div>
+                <div class="l2 line"></div>
+                <div class="l3 line"></div>
+            </div>
+
+
+
+            <!--Remove the comment if you want see the cursor-->
+            <!--Dont forgot to see its style and script -->
+
+            <!-- <div class="cursor"></div> -->
+
+        </main>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>

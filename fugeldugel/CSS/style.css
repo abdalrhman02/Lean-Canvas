@@ -1,0 +1,500 @@
+/* Global Rules */
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto Condensed'
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* Global Rules */
+
+
+
+
+/* Scroll Bar Styles */
+
+body::-webkit-scrollbar {width: 0.7em;}
+   
+body::-webkit-scrollbar-track {background-color: #4b4bc14a;}
+   
+body::-webkit-scrollbar-thumb {background-color: #4b4bc1;}
+
+/* Scroll Bar Styles End */
+
+
+body {
+    background: #050820
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+main h1{
+    position: relative;
+    color: white;
+    margin-top: 0.8em;
+    font-size: 3.5em
+}
+main h1::before {
+    content: '';
+    width: 45%;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff
+}
+
+
+#canvas-form {
+    color: white;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%
+}
+#canvas-form label {
+    background: #324599;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: -5px;
+    z-index: 2;
+    text-align: center
+}
+#canvas-form input {
+    width: 75%;
+    height: 9em;
+    border: none;
+    outline: none;
+    border-radius: 2px
+}
+#canvas-form button {
+    margin-top: 15px;
+    width: 70%;
+    height: 2.5em;
+    border-radius: 3px;
+    border: none;
+    text-transform: uppercase;
+    background: #4b4bc1;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
+
+
+#canvas-result {
+    display: none;
+    grid-template-columns: repeat(1,20%);
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: 
+    'pr sl val ad cs'
+    'pr met val ch cs'
+    'cost cost cost st st';
+    gap: 15px;
+    margin: 4em 0;
+    width: 90%
+}
+
+#problem {grid-area: pr}
+#solution{grid-area: sl}
+#key-metrics{grid-area: met}
+
+#problem .title,
+#solution .title,
+#key-metrics .title {background-color: #48A9A6}
+
+#problem .content .card,
+#solution .content .card,
+#key-metrics .content .card {background-color: #27a4a0;}
+
+
+#unique-value-proposition{grid-area: val}
+#unique-value-proposition .title {background-color: #674d76 }
+#unique-value-proposition .content .card{background-color: #5a3a6d;}
+
+
+#channels {grid-area: ch}
+#unfair-advantage {grid-area: ad}
+#customer-segments {grid-area: cs}
+
+#channels .title,
+#unfair-advantage .title,
+#customer-segments .title {background-color: #C1666B}
+
+#channels .content .card,
+#unfair-advantage .content .card,
+#customer-segments .content .card {background-color: #C1666B;}
+
+#cost-structure {grid-area: cost}
+#cost-structure .title{background-color: #4281A4}
+#cost-structure  .content .card {background-color: #4281A4;}
+
+#revenue-streams{grid-area: st}
+#revenue-streams .title{background-color: #cba56d}
+#revenue-streams .content .card {background-color: #cba56d;}
+
+
+
+#canvas-result .canvas-category {
+    background-color: #fff
+}
+
+#canvas-result .canvas-category .title {
+    display: flex;
+    align-items: center;
+    color:#fff;
+    padding: 3px 7px;
+}
+#canvas-result .canvas-category .title img {
+    width: 2em;
+    margin-right: 8px;
+}
+#canvas-result .canvas-category .title h2 {
+
+}
+
+#canvas-result .canvas-category .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 8px;
+}
+#canvas-result #cost-structure .content,
+#canvas-result #revenue-streams .content{
+    flex-direction: row;
+}
+
+#canvas-result .canvas-category .content p {
+
+}
+#canvas-result .canvas-category .content .card {
+    font-family:"Architects Daughter";
+    color: #FFF;
+    margin-top: 15px;
+    width: 65%;
+    height: 4em;
+    position: relative;
+    transform: skew(0deg,-1.5deg);
+    box-shadow: 1px 1.5px 9px -5px black;
+    transition: 0.3s
+}
+
+#canvas-result #cost-structure .content .card,
+#canvas-result #revenue-streams .content .card{
+    width: 23%;
+    height:3.7em;
+    margin: 0 20px
+}
+
+#canvas-result .canvas-category .content .card:hover {
+    cursor: pointer;
+    transform: skew(0deg,0deg);
+    box-shadow: 1px 4px 6px -5px #525252;
+    opacity: .9
+}
+
+#canvas-result .canvas-category .content .card h3 {
+    font-family: "Architects Daughter";
+    letter-spacing: 1.2px;
+    font-style: italic;
+    font-size: 16px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center
+}
+
+
+@media (max-width:1100px) {
+    
+    #canvas-form input {
+        width: 90%
+    }
+    
+    #canvas-result {
+        grid-template-columns: repeat(4,auto);
+        grid-template-rows:repeat(7,auto);
+        grid-template-areas: 
+        'pr pr pr pr'
+        'sl sl met met'
+        'val val val val'
+        'ad ad ch ch'
+        'cs cs cs cs'
+        'cost cost st st';
+        width: 80%
+    }
+
+    #canvas-result .canvas-category .content .card {
+        width: 12em 
+    }
+
+    #canvas-result #cost-structure .content,
+    #canvas-result #revenue-streams .content{
+        flex-direction: column;
+        margin: 0
+    }
+
+    #canvas-result #cost-structure .content .card,
+    #canvas-result #revenue-streams .content .card {
+        width: 55%;
+        height: 3.7em;
+        margin: 15px 0
+    }
+}
+
+
+@media (max-width:600px) {
+
+    #canvas-form {
+        width: 65%;
+    }
+
+    #canvas-form input {
+        width: 100%
+    }
+
+    main h1 {
+        font-size: 2.7em;
+        text-align: center;
+    }
+
+    #canvas-result {
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows:repeat(9,auto);
+        grid-template-areas: 
+        'pr'
+        'sl'
+        'met'
+        'val'
+        'ad'
+        'ch'
+        'cs'
+        'cost'
+        'st';
+        width: 80%
+    }
+}
+
+
+/* Loading Style */
+
+#loading {
+    display: none;
+    border-radius: 50%;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: -12em
+}
+
+#loading .line {
+    background-color: white;
+    width: 15px;
+    height: 45px;
+    margin-right: 5px
+}
+
+.l1 {animation: line1 4s infinite alternate ease-in }
+.l2 {animation: line2 3s infinite alternate ease-in }
+.l3 {animation: line3 2s infinite alternate ease-in }
+
+
+@keyframes line1 {
+    0%{width:15px; height:45px}
+    25%{width:15px; height:60px}
+    50%{width:15px; height:45px}
+    75%{width:15px; height:60px}
+    100%{width:15px; height:45px}
+}
+
+@keyframes line2 {
+    0%{width:15px; height:45px}
+    25%{width:15px; height:55px}
+    50%{width:15px; height:45px}
+    75%{width:15px; height:55px}
+    100%{width:15px; height:45px}
+}
+
+@keyframes line3 {
+    0%{width:15px; height:45px}
+    25%{width:15px; height:60px}
+    50%{width:15px; height:45px}
+    75%{width:15px; height:60px}
+    100%{width:15px; height:45px} 
+}
+
+/* Loading Style End */
+
+
+/* Rate notifaction Style */
+
+#play {
+    display: flex;
+    background-color: #fff;
+    position: absolute;
+    margin: 1.4em 1em;
+    border-radius: 5px;
+    z-index: 5;
+    transform: translateX(-25em);
+    transition: 0.3s;
+}
+
+#play .icon {
+    background-color: #ffda2f;
+    color: #fff;
+    padding: 10px 20px;
+    width:1.3em;
+    position: relative;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px
+}
+#play .icon i {
+    font-size: 27px
+}
+
+
+#play .text {
+    padding: 8px 10px
+}
+#play .text h4 {
+    position: relative
+}
+#play .text h4::before {
+    content:'';
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1.5px;
+    width: 23%
+}
+
+#play .text p {
+    max-width: 250px;
+    font-size: 14px;
+    margin: 8px 0
+}
+#play .text #notiBtn {
+    width: 4.5em;
+    background-color: #4b4bc1;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+
+
+
+#theGame {
+    background-color: #fff;
+    z-index: 5;
+    width: 50%;
+    height: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid #324599;
+    border-radius: 5px;
+    position: fixed;
+}
+
+
+#theGame #question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#theGame #question .emoji {
+
+}
+#theGame #question .emoji p {
+    font-size: 5em;
+}
+
+#theGame #question h2 {
+    font-size: 2.2em;
+    margin: 8px 0 20px;
+}
+
+#theGame #question .answer {
+    display: flex;
+}
+#theGame #question .answer button {
+    width: 9em;
+    height: 3em;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.4s
+}
+#theGame #question .answer button:hover {
+    opacity: 0.8;
+    cursor: pointer
+}
+#theGame #question .answer button:first-child {
+    margin-right: 10px;
+    background-color: #30e86a;
+}
+#theGame #question .answer button:last-child {
+    background-color: #ed3535;
+}
+
+
+#yes, #no {
+    display: none;
+}
+#yes i, #no i {
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    font-size: 28px;
+    cursor: pointer
+}
+
+/* Rate notifaction Style End */
+
+
+
+
+
+/* Cursor Style */
+
+/*
+    Remove the comment if you want see the cursor
+    Dont forgot to see its html code and script
+*/
+
+/* .cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    box-shadow: 0px 0px 20px 1px white;
+    background-color: rgba(255, 255, 255, 0.71);
+    border-radius: 50%;
+    left:0;
+    top:0;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    transition: .1s
+}  */
+
